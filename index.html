@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Linux Learning Hub makes Linux approachable with visual lessons, guided practice, and a clear learning roadmap."
+    />
+    <meta name="theme-color" content="#f4f6f2" />
+    <title>Linux Learning Hub — Learn Linux by doing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Linux Learning Hub home">
+          <span class="brand-mark" aria-hidden="true">
+            <span>&gt;_</span>
+          </span>
+          <span>Linux<span class="brand-accent">Hub</span></span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav
+          class="primary-nav"
+          id="primary-navigation"
+          aria-label="Primary navigation"
+          data-nav
+        >
+          <a href="#features">Why LinuxHub</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#about">How it works</a>
+          <a class="button button-small button-dark" href="#get-started">
+            Start learning
+            <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Built for curious beginners
+            </div>
+            <h1 id="hero-title">
+              Learn Linux.<br /><span>See how it works.</span>
+            </h1>
+            <p class="hero-lead">
+              Build real confidence at the command line through visual
+              explanations, guided practice, and a path that always shows you
+              what comes next.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#roadmap">
+                Explore the roadmap
+                <span aria-hidden="true">→</span>
+              </a>
+              <a class="text-link" href="#features">
+                See how it works
+                <span class="play-icon" aria-hidden="true">▶</span>
+              </a>
+            </div>
+            <div class="hero-proof">
+              <div class="avatar-stack" aria-hidden="true">
+                <span>AK</span><span>MS</span><span>JL</span><span>+</span>
+              </div>
+              <p><strong>12,000+ learners</strong><br />started from zero</p>
+            </div>
+          </div>
+
+          <div
+            class="terminal-stage reveal reveal-delay"
+            role="region"
+            aria-labelledby="terminal-title"
+          >
+            <div class="floating-tag floating-tag-top" aria-hidden="true">
+              <span class="tag-icon">✓</span>
+              <span><strong>Lesson complete</strong><small>File system basics</small></span>
+            </div>
+
+            <div class="terminal-card">
+              <div class="terminal-bar">
+                <div class="terminal-dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <span>bash — linuxhub</span>
+                <span class="terminal-menu" aria-hidden="true">•••</span>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-intro">
+                  <span class="mini-logo" aria-hidden="true">&gt;_</span>
+                  <div>
+                    <strong id="terminal-title">Welcome to your terminal</strong>
+                    <small>Let’s explore where you are.</small>
+                  </div>
+                </div>
+                <div class="command-row">
+                  <code class="prompt">learner@linuxhub:~$</code>
+                  <code class="typed-command" data-command>pwd</code>
+                  <span class="cursor" aria-hidden="true"></span>
+                </div>
+                <samp
+                  class="command-output"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  data-output
+                >
+                  /home/learner
+                </samp>
+                <div class="terminal-note">
+                  <span aria-hidden="true">✦</span>
+                  <p>
+                    <strong>Nice!</strong> <code>pwd</code> prints the path to
+                    your current working directory.
+                  </p>
+                </div>
+              </div>
+              <div class="terminal-footer">
+                <span>Step 2 of 5</span>
+                <div
+                  class="step-progress"
+                  role="progressbar"
+                  aria-label="Lesson progress"
+                  aria-valuemin="0"
+                  aria-valuemax="5"
+                  aria-valuenow="2"
+                  aria-valuetext="Step 2 of 5"
+                >
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <i aria-hidden="true"></i>
+                  <i aria-hidden="true"></i>
+                  <i aria-hidden="true"></i>
+                </div>
+                <button type="button" data-try-command>
+                  Replay command <span aria-hidden="true">↻</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="floating-tag floating-tag-bottom" aria-hidden="true">
+              <span class="tag-icon tag-icon-purple">⌁</span>
+              <span><strong>7 day streak</strong><small>Keep it going!</small></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container trust-bar reveal">
+          <p>Loved by learners from</p>
+          <ul class="trust-logos" aria-label="Learner communities">
+            <li><i class="logo-shape circle" aria-hidden="true"></i>freeCodeCamp</li>
+            <li><i class="logo-shape diamond" aria-hidden="true"></i>DEV Community</li>
+            <li><i class="logo-shape hex" aria-hidden="true"></i>Open Source</li>
+            <li><i class="logo-shape square" aria-hidden="true"></i>Campus Clubs</li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="section features"
+        id="features"
+        aria-labelledby="features-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="kicker">WHY LINUXHUB</span>
+              <h2 id="features-title">
+                Less memorizing.<br />More <em>understanding.</em>
+              </h2>
+            </div>
+            <p>
+              Linux can feel intimidating. We break it into small, visual steps
+              so every command makes sense—and sticks.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card feature-card-wide reveal">
+              <div class="feature-copy">
+                <span class="feature-number" aria-hidden="true">01</span>
+                <h3>See the system, not just the syntax</h3>
+                <p>
+                  Visual maps connect commands to the files, processes, and
+                  permissions they affect.
+                </p>
+              </div>
+              <div class="file-visual" aria-hidden="true">
+                <div class="folder-root">
+                  <span class="folder-icon">⌂</span>
+                  <strong>/home/you</strong>
+                </div>
+                <div class="tree-line"></div>
+                <div class="file-row file-row-one"><span>▰</span> projects</div>
+                <div class="file-row file-row-two"><span>▤</span> notes.txt</div>
+                <div class="file-row file-row-three"><span>◆</span> script.sh</div>
+              </div>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-number" aria-hidden="true">02</span>
+              <div class="practice-visual" aria-hidden="true">
+                <span class="practice-prompt">$</span>
+                <span>chmod +x script.sh</span>
+                <i>✓</i>
+              </div>
+              <h3>Practice in a safe sandbox</h3>
+              <p>
+                Experiment freely in guided terminal challenges with instant,
+                friendly feedback.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-number" aria-hidden="true">03</span>
+              <div class="progress-visual" aria-hidden="true">
+                <div class="progress-ring"><strong>68%</strong></div>
+                <div>
+                  <span>YOUR PROGRESS</span>
+                  <strong>14 lessons complete</strong>
+                  <small>Next: Pipes &amp; redirection</small>
+                </div>
+              </div>
+              <h3>Move at your own pace</h3>
+              <p>
+                Follow a clear path, save your progress, and pick up exactly
+                where you left off.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section roadmap"
+        id="roadmap"
+        aria-labelledby="roadmap-title"
+      >
+        <div class="container">
+          <div class="roadmap-heading reveal">
+            <span class="kicker">YOUR LEARNING PATH</span>
+            <h2 id="roadmap-title">
+              From first command<br />to Linux confidence.
+            </h2>
+            <p>
+              A practical roadmap designed to turn “What does that do?” into
+              “I’ve got this.”
+            </p>
+          </div>
+
+          <ol class="roadmap-list">
+            <li class="roadmap-item is-active reveal">
+              <div class="roadmap-marker" aria-hidden="true"><span>01</span></div>
+              <div class="roadmap-content">
+                <span class="level-tag">FOUNDATIONS</span>
+                <h3>
+                  <button
+                    class="roadmap-toggle"
+                    type="button"
+                    aria-expanded="true"
+                    aria-controls="roadmap-topics-1"
+                  >
+                    Meet your Linux system
+                  </button>
+                </h3>
+                <p>
+                  Learn the terminal, navigate files, and understand how Linux
+                  organizes everything.
+                </p>
+                <ul class="topic-list" id="roadmap-topics-1">
+                  <li>Terminal basics</li>
+                  <li>Files &amp; directories</li>
+                  <li>Getting help</li>
+                </ul>
+              </div>
+              <span class="roadmap-time">8 lessons · 2h</span>
+            </li>
+
+            <li class="roadmap-item reveal">
+              <div class="roadmap-marker" aria-hidden="true"><span>02</span></div>
+              <div class="roadmap-content">
+                <span class="level-tag">CORE SKILLS</span>
+                <h3>
+                  <button
+                    class="roadmap-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="roadmap-topics-2"
+                  >
+                    Work with confidence
+                  </button>
+                </h3>
+                <p>
+                  Edit files, combine commands, manage permissions, and get
+                  comfortable with everyday workflows.
+                </p>
+                <ul class="topic-list" id="roadmap-topics-2" hidden>
+                  <li>Text processing</li>
+                  <li>Pipes &amp; redirects</li>
+                  <li>Permissions</li>
+                </ul>
+              </div>
+              <span class="roadmap-time">12 lessons · 4h</span>
+            </li>
+
+            <li class="roadmap-item reveal">
+              <div class="roadmap-marker" aria-hidden="true"><span>03</span></div>
+              <div class="roadmap-content">
+                <span class="level-tag">NEXT LEVEL</span>
+                <h3>
+                  <button
+                    class="roadmap-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="roadmap-topics-3"
+                  >
+                    Take control of your machine
+                  </button>
+                </h3>
+                <p>
+                  Understand processes, packages, networking, and write scripts
+                  that automate repetitive work.
+                </p>
+                <ul class="topic-list" id="roadmap-topics-3" hidden>
+                  <li>Processes</li>
+                  <li>Networking</li>
+                  <li>Shell scripting</li>
+                </ul>
+              </div>
+              <span class="roadmap-time">15 lessons · 6h</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="section about"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="container about-grid">
+          <div class="about-copy reveal">
+            <span class="kicker">HOW IT WORKS</span>
+            <h2 id="about-title">A little theory.<br />A lot of doing.</h2>
+          </div>
+          <ol class="process-list">
+            <li class="process-step reveal">
+              <span aria-hidden="true">1</span>
+              <div>
+                <h3>Learn it visually</h3>
+                <p>Start with a clear mental model—no dense manual pages.</p>
+              </div>
+            </li>
+            <li class="process-step reveal">
+              <span aria-hidden="true">2</span>
+              <div>
+                <h3>Try it immediately</h3>
+                <p>Use each new command in a focused, realistic challenge.</p>
+              </div>
+            </li>
+            <li class="process-step reveal">
+              <span aria-hidden="true">3</span>
+              <div>
+                <h3>Make it yours</h3>
+                <p>Build small projects that turn knowledge into confidence.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="section cta-section"
+        id="get-started"
+        aria-labelledby="cta-title"
+      >
+        <div class="container">
+          <div class="cta-card reveal">
+            <div class="cta-grid" aria-hidden="true"></div>
+            <div class="cta-prompt" aria-hidden="true">&gt;_</div>
+            <span class="kicker kicker-light">YOUR TERMINAL IS WAITING</span>
+            <h2 id="cta-title">
+              Ready to make Linux<br />finally <em>click?</em>
+            </h2>
+            <p>
+              Start with a five-minute lesson. No setup, no experience, no
+              pressure.
+            </p>
+            <a class="button button-light" href="#roadmap">
+              Start learning for free
+              <span aria-hidden="true">→</span>
+            </a>
+            <small>No credit card. Just curiosity.</small>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="index.html" aria-label="Linux Learning Hub home">
+          <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+          <span>Linux<span class="brand-accent">Hub</span></span>
+        </a>
+        <p>Learn openly. Build confidently.</p>
+        <p>© <time data-year></time> Linux Learning Hub</p>
+      </div>
+    </footer>
+  </body>
+</html>
