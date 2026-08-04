@@ -1153,7 +1153,8 @@ h2 em {
   letter-spacing: -0.035em;
 }
 
-.roadmap-toggle {
+.roadmap-toggle,
+.roadmap-link {
   position: static;
   padding: 0;
   border: 0;
@@ -1162,10 +1163,12 @@ h2 em {
   cursor: pointer;
   font: inherit;
   letter-spacing: inherit;
+  text-decoration: none;
   text-align: left;
 }
 
-.roadmap-toggle::after {
+.roadmap-toggle::after,
+.roadmap-link::after {
   position: absolute;
   z-index: 2;
   inset: 0;
@@ -1178,7 +1181,8 @@ h2 em {
   outline-offset: 4px;
 }
 
-.roadmap-toggle:focus-visible {
+.roadmap-toggle:focus-visible,
+.roadmap-link:focus-visible {
   outline: none;
 }
 
