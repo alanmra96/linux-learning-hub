@@ -1204,6 +1204,11 @@ h2 em {
   display: none;
 }
 
+.topic-list a {
+  position: relative;
+  z-index: 3;
+}
+
 .topic-list li {
   padding: 6px 9px;
   border: 1px solid #414643;

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn how Linux users and groups represent identities and control shared access through an interactive beginner-friendly lesson."
+    />
+    <meta name="theme-color" content="#f4f6f2" />
+    <title>Users &amp; Groups — Linux Learning Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="users-groups.css" />
+    <script src="script.js" defer></script>
+    <script src="users-groups.js" defer></script>
+  </head>
+  <body class="module-page">
+    <a class="skip-link" href="#main-content">Skip to lesson</a>
+
+    <header class="site-header" data-header>
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Linux Learning Hub home">
+          <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+          <span>Linux<span class="brand-accent">Hub</span></span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav
+          class="primary-nav"
+          id="primary-navigation"
+          aria-label="Primary navigation"
+          data-nav
+        >
+          <a href="index.html">Home</a>
+          <a href="filesystem.html">File system</a>
+          <a href="users-groups.html" aria-current="page">Users &amp; groups</a>
+          <a href="index.html#roadmap">Roadmap</a>
+          <a class="button button-small button-dark" href="#identity-lab">
+            Explore identities
+            <span aria-hidden="true">↓</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="module-hero" aria-labelledby="module-title">
+        <div class="module-orb module-orb-one" aria-hidden="true"></div>
+        <div class="module-orb module-orb-two" aria-hidden="true"></div>
+        <div class="container module-hero-grid">
+          <div class="module-intro reveal">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="index.html">Learning path</a></li>
+                <li aria-current="page">Users &amp; Groups</li>
+              </ol>
+            </nav>
+            <span class="kicker">MODULE 02 · FOUNDATIONS</span>
+            <h1 class="module-title" id="module-title">
+              Users &amp;<br /><span>Groups.</span>
+            </h1>
+            <p class="module-lead">
+              Linux uses identities to decide who is running a command and
+              which resources they can use. Meet users, groups, and the
+              numeric IDs behind both.
+            </p>
+            <div class="module-meta" aria-label="Module details">
+              <span><strong>12 min</strong> read</span>
+              <span><strong>Beginner</strong> level</span>
+              <span><strong>3</strong> commands</span>
+            </div>
+          </div>
+
+          <aside
+            class="mental-model-card reveal reveal-delay"
+            aria-labelledby="mental-model-title"
+          >
+            <span class="mental-model-icon" aria-hidden="true">ID</span>
+            <div>
+              <span class="kicker" id="mental-model-title">THE MENTAL MODEL</span>
+              <h2>Identity first, access second.</h2>
+              <p>
+                A user identifies one account. Groups collect users who need
+                something in common, such as access to a shared project. Linux
+                checks that identity and the resource's permissions together.
+              </p>
+            </div>
+            <div class="identity-example" aria-label="Example Linux identity">
+              <code>maya → developers → project-plan.md</code>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="concepts-section" aria-labelledby="concepts-title">
+        <div class="container">
+          <div class="section-heading-module reveal">
+            <div>
+              <span class="kicker">THE BUILDING BLOCKS</span>
+              <h2 id="concepts-title">Names for people.<br />Numbers for Linux.</h2>
+            </div>
+            <p>
+              Friendly names are easier to remember, but Linux tracks users
+              and groups with numeric identifiers behind the scenes.
+            </p>
+          </div>
+
+          <div class="concept-grid">
+            <article class="concept-card reveal">
+              <span class="concept-number" aria-hidden="true">01</span>
+              <h3>User and UID</h3>
+              <p>
+                A user is an identity that can own files and run processes.
+                Its <strong>UID</strong> is the numeric user identifier Linux
+                uses internally.
+              </p>
+              <code>maya → UID 1000</code>
+            </article>
+
+            <article class="concept-card reveal">
+              <span class="concept-number" aria-hidden="true">02</span>
+              <h3>Group and GID</h3>
+              <p>
+                A group collects identities for shared access. Its
+                <strong>GID</strong> is the group's numeric identifier.
+              </p>
+              <code>developers → GID 2000</code>
+            </article>
+
+            <article class="concept-card reveal">
+              <span class="concept-number" aria-hidden="true">03</span>
+              <h3>Primary and supplementary</h3>
+              <p>
+                Every user has one primary group, commonly used for new files,
+                and can belong to additional supplementary groups.
+              </p>
+              <code>maya + developers</code>
+            </article>
+
+            <article class="concept-card concept-card-dark reveal">
+              <span class="concept-number" aria-hidden="true">04</span>
+              <h3>The root user</h3>
+              <p>
+                <code>root</code> is the administrative user with UID 0. It
+                can bypass ordinary permission checks, so it should be used
+                carefully—not as an everyday account.
+              </p>
+              <code>root → UID 0</code>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="commands-section" aria-labelledby="commands-title">
+        <div class="container">
+          <div class="commands-heading reveal">
+            <span class="kicker">THREE SAFE QUESTIONS</span>
+            <h2 id="commands-title">Ask Linux who you are.</h2>
+          </div>
+          <dl class="command-list">
+            <div class="command-card reveal">
+              <dt><code>whoami</code></dt>
+              <dd>Print the name of the current user.</dd>
+            </div>
+            <div class="command-card reveal">
+              <dt><code>id</code></dt>
+              <dd>Show the current user's UID, primary GID, and groups.</dd>
+            </div>
+            <div class="command-card reveal">
+              <dt><code>groups</code></dt>
+              <dd>List the groups the current user belongs to.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="lab-section" id="identity-lab" aria-labelledby="lab-title">
+        <div class="container">
+          <div class="section-heading-module reveal">
+            <div>
+              <span class="kicker">INTERACTIVE IDENTITY LAB</span>
+              <h2 id="lab-title">Choose a user.<br />Follow their access.</h2>
+            </div>
+            <p>
+              This is a simulation using fictional accounts. It runs only in
+              this page and does not inspect or change your computer.
+            </p>
+          </div>
+
+          <section
+            class="identity-fallback reveal"
+            aria-labelledby="fallback-title"
+            data-identity-fallback
+          >
+            <span class="kicker">IDENTITY OVERVIEW</span>
+            <h3 id="fallback-title">How the example users compare</h3>
+            <p>
+              The interactive selector requires JavaScript. This table keeps
+              the complete example available without it.
+            </p>
+            <div class="fallback-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">User</th>
+                    <th scope="col">UID</th>
+                    <th scope="col">Primary group</th>
+                    <th scope="col">Supplementary groups</th>
+                    <th scope="col">Project access</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">maya</th>
+                    <td>1000</td>
+                    <td>maya (1000)</td>
+                    <td>developers (2000)</td>
+                    <td>Allowed through developers</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">noah</th>
+                    <td>1001</td>
+                    <td>noah (1001)</td>
+                    <td>design (2001)</td>
+                    <td>Denied: not in developers</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">root</th>
+                    <td>0</td>
+                    <td>root (0)</td>
+                    <td>None</td>
+                    <td>Allowed through administrative privileges</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="fallback-rule">
+              <strong>Resource rule:</strong>
+              <code>/srv/project/project-plan.md</code> belongs to group
+              <code>developers</code> and gives that group read and write access.
+            </p>
+          </section>
+
+          <div class="identity-lab reveal" data-identity-lab hidden>
+            <form class="user-picker" data-user-picker>
+              <fieldset>
+                <legend>Select a fictional user</legend>
+                <label class="user-option">
+                  <input type="radio" name="user" value="maya" checked />
+                  <span class="user-avatar" aria-hidden="true">M</span>
+                  <span><strong>maya</strong><small>Developer</small></span>
+                </label>
+                <label class="user-option">
+                  <input type="radio" name="user" value="noah" />
+                  <span class="user-avatar" aria-hidden="true">N</span>
+                  <span><strong>noah</strong><small>Designer</small></span>
+                </label>
+                <label class="user-option">
+                  <input type="radio" name="user" value="root" />
+                  <span class="user-avatar" aria-hidden="true">#</span>
+                  <span><strong>root</strong><small>Administrator</small></span>
+                </label>
+              </fieldset>
+              <p class="picker-help">Use Tab to enter the choices, then the arrow keys to change user.</p>
+            </form>
+
+            <div class="identity-results">
+              <section class="simulated-terminal" aria-labelledby="terminal-heading">
+                <div class="terminal-heading">
+                  <div class="terminal-dots" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span id="terminal-heading">simulated identity</span>
+                  <span aria-hidden="true">•••</span>
+                </div>
+                <div class="terminal-output">
+                  <div class="terminal-line">
+                    <code>$ whoami</code>
+                    <samp data-whoami>maya</samp>
+                  </div>
+                  <div class="terminal-line">
+                    <code>$ id</code>
+                    <samp data-id>uid=1000(maya) gid=1000(maya) groups=1000(maya),2000(developers)</samp>
+                  </div>
+                  <div class="terminal-line">
+                    <code>$ groups</code>
+                    <samp data-groups>maya developers</samp>
+                  </div>
+                </div>
+              </section>
+
+              <section class="group-map" aria-labelledby="group-map-title">
+                <div class="result-heading">
+                  <div>
+                    <span class="kicker">GROUP MAP</span>
+                    <h3 id="group-map-title"><span data-user-name>maya</span>'s memberships</h3>
+                  </div>
+                  <span class="uid-badge">UID <strong data-uid>1000</strong></span>
+                </div>
+                <div class="group-columns">
+                  <div>
+                    <h4>Primary group</h4>
+                    <div class="group-chip group-chip-primary">
+                      <span aria-hidden="true">1</span>
+                      <strong data-primary-name>maya</strong>
+                      <small>GID <span data-primary-gid>1000</span></small>
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Supplementary groups</h4>
+                    <div class="supplementary-list" data-supplementary-list>
+                      <div class="group-chip">
+                        <span aria-hidden="true">+</span>
+                        <strong>developers</strong>
+                        <small>GID 2000</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="access-card" aria-labelledby="resource-title">
+                <div class="resource-details">
+                  <span class="resource-icon" aria-hidden="true">▤</span>
+                  <div>
+                    <span class="kicker">SIMULATED RESOURCE</span>
+                    <h3 id="resource-title">project-plan.md</h3>
+                    <code>/srv/project/project-plan.md</code>
+                  </div>
+                </div>
+                <dl class="resource-rule">
+                  <div><dt>Owner</dt><dd>alex</dd></div>
+                  <div><dt>Group</dt><dd>developers</dd></div>
+                  <div><dt>Permissions</dt><dd><code>-rw-rw----</code></dd></div>
+                </dl>
+                <div
+                  class="access-result is-allowed"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  data-access-result
+                >
+                  <span class="access-symbol" aria-hidden="true" data-access-symbol>✓</span>
+                  <div>
+                    <strong data-access-title>Access allowed</strong>
+                    <p data-access-explanation>
+                      maya belongs to developers, so the group's read and write permissions apply.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="takeaway-section" aria-labelledby="takeaway-title">
+        <div class="container takeaway-card reveal">
+          <div>
+            <span class="kicker">KEY TAKEAWAY</span>
+            <h2 id="takeaway-title">Identity connects to access.</h2>
+          </div>
+          <p>
+            Commands such as <code>whoami</code>, <code>id</code>, and
+            <code>groups</code> reveal the identity Linux uses. Group membership
+            can grant shared access, but the resource's ownership and
+            permissions still decide what that group may do.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="index.html" aria-label="Linux Learning Hub home">
+          <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+          <span>Linux<span class="brand-accent">Hub</span></span>
+        </a>
+        <p>Learn openly. Build confidently.</p>
+        <p>© <time data-year></time> Linux Learning Hub</p>
+      </div>
+    </footer>
+  </body>
+</html>
