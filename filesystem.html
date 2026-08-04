@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore the Linux file system through an interactive, beginner-friendly directory tree."
+    />
+    <meta name="theme-color" content="#f4f6f2" />
+    <title>Linux File System — Linux Learning Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="filesystem.css" />
+    <script src="script.js" defer></script>
+    <script src="filesystem.js" defer></script>
+  </head>
+  <body class="module-page">
+    <a class="skip-link" href="#main-content">Skip to lesson</a>
+
+    <header class="site-header" data-header>
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Linux Learning Hub home">
+          <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+          <span>Linux<span class="brand-accent">Hub</span></span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav
+          class="primary-nav"
+          id="primary-navigation"
+          aria-label="Primary navigation"
+          data-nav
+        >
+          <a href="index.html">Home</a>
+          <a href="filesystem.html" aria-current="page">File system</a>
+          <a href="index.html#roadmap">Roadmap</a>
+          <a class="button button-small button-dark" href="#explorer">
+            Explore directories
+            <span aria-hidden="true">↓</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="module-hero" aria-labelledby="module-title">
+        <div class="module-orb module-orb-one" aria-hidden="true"></div>
+        <div class="module-orb module-orb-two" aria-hidden="true"></div>
+        <div class="container module-hero-grid">
+          <div class="module-intro reveal">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="index.html">Learning path</a></li>
+                <li aria-current="page">Linux File System</li>
+              </ol>
+            </nav>
+            <span class="kicker">MODULE 01 · FOUNDATIONS</span>
+            <h1 class="module-title" id="module-title">
+              Linux File<br /><span>System.</span>
+            </h1>
+            <p class="module-lead">
+              Linux organizes everything beneath one starting point:
+              <code>/</code>. Explore the tree to learn what each major
+              directory does and where you will meet it in everyday work.
+            </p>
+            <div class="module-meta" aria-label="Module details">
+              <span><strong>15 min</strong> read</span>
+              <span><strong>Beginner</strong> level</span>
+              <span><strong>17</strong> directories</span>
+            </div>
+          </div>
+
+          <aside class="mental-model-card reveal reveal-delay" aria-labelledby="mental-model-title">
+            <span class="mental-model-icon" aria-hidden="true">/</span>
+            <div>
+              <span class="kicker" id="mental-model-title">THE MENTAL MODEL</span>
+              <h2>One tree, one root.</h2>
+              <p>
+                Unlike systems built around drive letters, Linux attaches
+                disks, devices, and system resources to a single directory
+                tree that begins at <code>/</code>, called “root.”
+              </p>
+            </div>
+            <div class="path-example" aria-label="Example Linux path">
+              <code>/home/learner/notes.txt</code>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="filesystem-section" id="explorer" aria-labelledby="explorer-title">
+        <div class="container">
+          <div class="explorer-heading reveal">
+            <div>
+              <span class="kicker">INTERACTIVE EXPLORER</span>
+              <h2 id="explorer-title">Choose a directory.<br />See why it matters.</h2>
+            </div>
+            <p>
+              Use the directory tree to explore. Select any folder to see its
+              purpose, typical contents, and a practical example.
+            </p>
+          </div>
+
+          <section
+            class="filesystem-fallback reveal"
+            aria-labelledby="fallback-title"
+            data-filesystem-fallback
+          >
+            <span class="kicker">QUICK DIRECTORY GUIDE</span>
+            <h3 id="fallback-title">Linux file system landmarks</h3>
+            <p>
+              The interactive explorer requires JavaScript. This overview keeps
+              the most useful beginner landmarks available without it.
+            </p>
+            <dl class="fallback-directory-list">
+              <div><dt><code>/</code></dt><dd>The starting point for the entire file system.</dd></div>
+              <div><dt><code>/home</code></dt><dd>Personal files and settings for regular users.</dd></div>
+              <div><dt><code>/etc</code></dt><dd>System-wide configuration files.</dd></div>
+              <div><dt><code>/usr</code></dt><dd>Most installed programs, libraries, and shared data.</dd></div>
+              <div><dt><code>/var</code></dt><dd>Logs, caches, and other data that changes over time.</dd></div>
+              <div><dt><code>/tmp</code></dt><dd>Short-lived temporary files.</dd></div>
+            </dl>
+          </section>
+
+          <div
+            class="filesystem-explorer reveal"
+            data-filesystem-explorer
+            hidden
+          >
+            <div class="tree-panel">
+              <div class="tree-panel-header">
+                <div class="terminal-dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <span>filesystem</span>
+                <span aria-hidden="true">•••</span>
+              </div>
+              <div class="tree-help" id="tree-help">
+                <span aria-hidden="true">⌨</span>
+                <span>Use arrow keys to move and expand folders.</span>
+              </div>
+              <ul
+                class="directory-tree"
+                role="tree"
+                aria-label="Linux directories"
+                aria-describedby="tree-help"
+                data-directory-tree
+              ></ul>
+            </div>
+
+            <article class="directory-details" aria-labelledby="directory-title">
+              <div class="details-topline">
+                <span class="directory-path" data-directory-path></span>
+                <span class="details-status"><i aria-hidden="true"></i> Directory</span>
+              </div>
+              <h3 id="directory-title" data-directory-title></h3>
+              <p class="directory-summary" data-directory-summary></p>
+
+              <div class="detail-grid">
+                <section aria-labelledby="what-title">
+                  <span class="detail-number" aria-hidden="true">01</span>
+                  <div>
+                    <h4 id="what-title">What it is</h4>
+                    <p data-directory-what></p>
+                  </div>
+                </section>
+                <section aria-labelledby="why-title">
+                  <span class="detail-number" aria-hidden="true">02</span>
+                  <div>
+                    <h4 id="why-title">Why it exists</h4>
+                    <p data-directory-why></p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="contents-block" aria-labelledby="contents-title">
+                <div class="contents-heading">
+                  <span class="detail-number" aria-hidden="true">03</span>
+                  <h4 id="contents-title">Common contents</h4>
+                </div>
+                <ul class="contents-list" data-directory-contents></ul>
+              </section>
+
+              <section class="example-block" aria-labelledby="example-title">
+                <span class="example-icon" aria-hidden="true">✦</span>
+                <div>
+                  <h4 id="example-title">Real-world example</h4>
+                  <p data-directory-example></p>
+                </div>
+              </section>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="takeaway-section" aria-labelledby="takeaway-title">
+        <div class="container takeaway-card reveal">
+          <div>
+            <span class="kicker">KEY TAKEAWAY</span>
+            <h2 id="takeaway-title">Paths tell you where you are.</h2>
+          </div>
+          <p>
+            An absolute path begins at <code>/</code>, so
+            <code>/home/learner/notes.txt</code> describes every step from the
+            root directory to the file. You do not need to memorize the whole
+            tree—learn the landmarks and explore as you go.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="index.html" aria-label="Linux Learning Hub home">
+          <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+          <span>Linux<span class="brand-accent">Hub</span></span>
+        </a>
+        <p>Learn openly. Build confidently.</p>
+        <p>© <time data-year></time> Linux Learning Hub</p>
+      </div>
+    </footer>
+  </body>
+</html>
